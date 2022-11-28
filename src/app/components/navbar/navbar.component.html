@@ -1,0 +1,28 @@
+<mat-toolbar color="accent" class="navbar">
+  <mat-toolbar-row>
+    <span class="navbar-title">Secondhand Bookstore</span>
+    <span class="navbar-spacer">
+      IT edition
+      <mat-icon
+      [ngStyle]="{'color': 'black'}"
+      >
+        engineering
+      </mat-icon>
+    </span>
+
+    <a routerLink="/" class="navbar-spacer">Library</a>
+    
+    <div class="login" *ngIf="!loggedIn">
+      <app-register (register)="openRegisterForm()"></app-register>
+      <app-login (login)="openLoginForm()"></app-login>
+    </div>
+    <div class="loggedIn" *ngIf="loggedIn">
+      <app-profile
+      (onLogout)="logout()"
+      (onAddBook)="addBook()"
+      (onViewBooks)="viewBooks()"
+      >
+      </app-profile>
+    </div>
+  </mat-toolbar-row>
+</mat-toolbar>

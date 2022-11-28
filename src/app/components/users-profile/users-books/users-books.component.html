@@ -1,0 +1,20 @@
+<mat-grid-list cols="4" rowHeight="450px" [gutterSize]="'10px'">
+    <mat-grid-tile *ngFor="let book of books">
+        <div class="book-card">
+            <mat-card>
+                <mat-card-header>
+                    <mat-card-title class="book-title">{{ book.title }}</mat-card-title>
+                </mat-card-header>
+                <img mat-card-image src="{{ book.image }}" alt="book photo">
+                <mat-card-actions>
+                    <button mat-raised-button
+                    (click)="deleteBook(book.id)"
+                    color="warn"
+                    >
+                        Delete
+                    </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </mat-grid-tile>    
+</mat-grid-list>

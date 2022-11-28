@@ -1,0 +1,27 @@
+<div class="home">
+    <div class="header">
+        <h1>Find the book you want to sell</h1>
+    </div>
+    <mat-form-field class="form" color="accent">
+        <input matInput placeholder="Search for the book title..." 
+            type="text" 
+            name="searchString" 
+            [(ngModel)]="searchString" 
+            (keyup)="searchBook()">
+    </mat-form-field>
+    <div *ngIf="searchString">
+        <div *ngFor="let book of bookstoreResults">
+            <app-bookstore-result [book]="book" (onBookSelect)="selectBook($event)"></app-bookstore-result>
+        </div>
+    </div>
+</div>
+
+<form class="add-form" (ngSubmit)="onSubmit()">
+    
+    <div class="form-control">
+        <label for="number">Price</label>
+        <input type="number" name="price" [(ngModel)]="price" id="price" placeholder="Add Price"/>
+    </div>
+    
+    <input type="submit" value="Sell Book" class="btn btn-block" />
+</form>

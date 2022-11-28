@@ -1,0 +1,44 @@
+<mat-toolbar color="accent">
+    <span class="username">{{ username }}</span>
+
+    <span class="menu">
+      <button mat-icon-button [matMenuTriggerFor]="menu">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item
+        (click)="addBook()"
+        >
+            <mat-icon
+            [ngStyle]="{'color': 'black'}"
+            >
+                library_add
+            </mat-icon>
+            <span>Add a book</span>
+        </button>
+
+        <button mat-menu-item
+        (click)="viewBooks()"
+        >
+            <mat-icon
+            [ngStyle]="{'color': 'black'}"
+            >
+                library_books
+            </mat-icon>
+            <span>View your books</span>
+        </button>
+        
+        <button mat-menu-item 
+        (click)="logout()"
+        >
+            <mat-icon
+            [ngStyle]="{'color': 'black'}"
+            >
+                exit_to_app
+            </mat-icon>
+            <span>Logout</span>
+        </button>
+      </mat-menu>
+    </span>
+    
+</mat-toolbar>

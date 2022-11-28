@@ -1,0 +1,12 @@
+.flash-messages {
+    position: fixed!important; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 40%;
+    bottom: 90%;
+    overflow: auto; /* Enable scroll if needed */
+    background-color: #721c24; /* Fallback color */
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: white;
+}

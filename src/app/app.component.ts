@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'secondhand-bookstore';
+
+  constructor(private router: Router) { }
+
+  addBook() {
+    this.router.navigate(['/addBook']);
+  }
+
+  viewBooks() {
+    this.router.navigate(['/myBooks']);
+  }
 }

@@ -1,0 +1,14 @@
+.title {
+    text-align: center;
+}
+
+.book-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}
+
+.description {
+    text-align: center;
+}
