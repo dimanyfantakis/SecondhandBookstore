@@ -59,21 +59,26 @@ An e-commerce full-stack web application where users can make listings to sell I
 
 ### Requirements
 
-_Clone the repository_
+_Clone the client repository_
 ```javascript
-git clone https://github.com/dimanyfantakis/SecondhandBookstore.git
+git clone -b client https://github.com/dimanyfantakis/SecondhandBookstore.git
+```
+
+_Clone the server repository_
+```javascript
+git clone -b server https://github.com/dimanyfantakis/SecondhandBookstore.git
 ```
 
 ### Installation
 
 *Install NPM packages*
 
-1. Navigate to the folder /secondhand-bookstore of the cloned repository via a terminal and run
+1. Navigate to the cloned client branch folder via a terminal and run
     ```javascript
     npm install
     ```
 
-2. Import the /SecondhandBookstore maven project to an IDE
+2. Import the maven project of the cloned server branch in an IDE
 
 3. To build the project run:
     ```javascript
@@ -85,12 +90,12 @@ git clone https://github.com/dimanyfantakis/SecondhandBookstore.git
 
 ## Usage
 
-1. To run the server run the main function of the SecondhandBookstoreApplication.java file located in: 
+1. To run the server run the main function of the SecondhandBookstoreApplication.java file from the server branch located in: 
     ```javascript
-    /SecondhandBookstore/src/main/java/com/github/dimanyfantakis/SecondhandBookstore
+    /src/main/java/com/github/dimanyfantakis/SecondhandBookstore
     ```
 
-2. To run the client navigate to the '/secondhand-bookstore' folder and run
+2. To run the client navigate to thecloned client branch folder and run
     ```javascript
     ng serve
     ```
