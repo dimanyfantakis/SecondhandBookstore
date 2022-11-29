@@ -6,6 +6,7 @@ import { MatDialog } from '@angular/material';
 import { AuthFormComponent } from './auth-form/auth-form.component';
 import { User } from 'src/app/models/User';
 import { FlashMessagesService } from 'flash-messages-angular';
+import { ValidationService } from 'src/app/services/validation.service';
 
 @Component({
   selector: 'app-navbar',
@@ -24,7 +25,7 @@ export class NavbarComponent implements OnInit {
   password: string = "";
 
   constructor(private uiService: UiService, private authService: AuthService, private dialog: MatDialog, 
-    private flashMessage: FlashMessagesService) { 
+    private flashMessage: FlashMessagesService, private validationService: ValidationService) { 
     this.subscription = uiService.onToggle().subscribe(
       (value) => this.loggedIn = value
     );
@@ -43,7 +44,7 @@ export class NavbarComponent implements OnInit {
         this.resetFormFields();
         return;
       }
-      if (!(res.username && res.password)) {
+      if (this.validationService.isUserValid(res.username, res.password)) {
         this.flashMessage.show('Username and password are required', {timeout: 3000});
         this.resetFormFields();
         return;
@@ -82,7 +83,7 @@ export class NavbarComponent implements OnInit {
         this.resetFormFields();
         return;
       }
-      if (!(res.username && res.password)) {
+      if (this.validationService.isUserValid(res.username, res.password)) {
         this.flashMessage.show('Username and password are required', {timeout: 3000});
         return;
       }

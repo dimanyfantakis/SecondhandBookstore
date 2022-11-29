@@ -3,6 +3,7 @@ import { FlashMessagesService } from 'flash-messages-angular';
 import { Book } from 'src/app/models/Book';
 import { BookService } from 'src/app/services/book.service';
 import { ItBookstoreService } from 'src/app/services/itbookstore.service';
+import { ValidationService } from 'src/app/services/validation.service';
 
 @Component({
   selector: 'app-add-book',
@@ -20,13 +21,13 @@ export class AddBookComponent implements OnInit {
   selectedBook: Book;
 
   constructor(private bookService: BookService, private itBookstoreService: ItBookstoreService, 
-    private flashMessage: FlashMessagesService) { }
+    private flashMessage: FlashMessagesService, private validationService: ValidationService) { }
 
   ngOnInit() {
   }
 
   onSubmit(): void {
-    if (!(this.price && this.selectedBook)) {
+    if (this.validationService.isBookValid(this.price, this.selectedBook)) {
       this.flashMessage.show('You need to select a book and define a price for it in order to sell it!',
         {timeout: 3000});
     }

@@ -79,7 +79,7 @@ git clone https://github.com/dimanyfantakis/SecondhandBookstore.git
     ```javascript
     mvn compile
     ```
-    ***Note:*** The server is configured to use a MySQL database named **secondhand_bookstore** that runs locally on port: **3306**
+    ***Note:*** The server is configured to use a MySQL database named **secondhand_bookstore** that runs locally on port: **3306**. You have to configure your application.properties file located in /src/main/resources/ as demonstrated in the [Spring Boot documentation][spring-boot-url]. You would also need to define a **stripe.api.secretKey** property and set its value to the secret key from your Stripe account.
 
 
 
@@ -99,7 +99,7 @@ In order to buy or sell a book you have to create an account by registering via 
 
 * You are now eligible to buy a book by selecting your desired book in the library and adding your credit card credentials
 
-* In order to sell or delete a book listing, simply use the profile component that will be rendered after you have succesfully logged in
+* In order to make or delete a book listing, simply use the profile component that will be rendered after you have succesfully logged in
 
     * To make a book listing click on the Add Book tab. Use the search bar to find the book you are willing to sell and make the listing.
 
@@ -170,6 +170,7 @@ See [License][license-url] for more information regarding the license
 [ApacheMaven-url]: https://maven.apache.org/
 
 [ITBookstoreAPI-url]: https://api.itbook.store/#api-overview
+[spring-boot-url]: https://spring.io/guides/gs/accessing-data-mysql/
 
 [LibraryScreenshot-url]: https://drive.google.com/uc?export=view&id=1CQn8BJ8Vn9ru3LejgA1Drdv81t8lYdmH
 [MakeListing-url]: https://drive.google.com/uc?export=view&id=1mw2vSy8jjmi_4UGdjJPXiTdEH-iOy2t6
