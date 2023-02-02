@@ -23,7 +23,7 @@ An e-commerce full-stack web application where users can make listings to sell I
 
 ### Features
 
-* Spring Boot backend
+* Spring Boot back-end
     * MySQL database to store the users' and books' information
     * User authorization via Spring Security
     * User authentication via JWT
